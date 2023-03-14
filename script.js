@@ -17,11 +17,17 @@ function add() {
     alert('Adicionado com sucesso ✔️')
     nlwSetup.addDay(today)
 }
+
+function save(){
+    localStorage.setItem('Guilherme@habits', JSON.stringify(nlwSetup.data))
+}
+
 // const data = {
 //     run: ['01-01', '01-02', '01-03', '01-06'],
 //     water: ['01-01', '01-02', '01-04'],
 //     food: ['01-01', '01-04', '01-06'],
 // }
 
+const data = JSON.parse(localStorage.getItem('Guilherme@habits')) || {}
 nlwSetup.setData(data)
 nlwSetup.load()
